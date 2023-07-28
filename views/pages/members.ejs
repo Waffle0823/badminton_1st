@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head'); %>
+<%- include('../partials/head'); %>
 
     <link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,39 +15,66 @@
 
         <%- include('../partials/nav'); %>
 
-        <div class="container mt-5">
-            <table id="example" class="table table-striped" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Addresss</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Seq</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Addresss</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Seq</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+            <div class="container mt-5">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Addresss</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Addresss</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
 
-        <%- include('../partials/footer'); %>
+            <!-- The Delete Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
 
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
-        <script src="/javascript/pages/members.js"></script>
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Delete Member</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            <input type="hidden" id="delete_email">
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Are you sure?
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" id="btn_delete" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">NO</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <%- include('../partials/footer'); %>
+
+                <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+                <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+                <script src="/javascript/pages/members.js"></script>
 
     </body>
 
